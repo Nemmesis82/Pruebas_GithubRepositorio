@@ -1,12 +1,9 @@
 package evaluacion.primera;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-import org.jdom2.Element;
 
 public class conexionBBDD 
 {
@@ -64,7 +61,7 @@ public class conexionBBDD
 				System.out.println(region);
 			}
 			
-			rset = stmt.executeQuery("INSERT INTO regions (REGION_ID,REGION_NAME) VALUES (11,'Roma')");
+			rset = stmt.executeQuery("INSERT INTO regions (REGION_ID,REGION_NAME) VALUES (12,'Brasil')");
 					
 			}
 			catch(Exception e)
