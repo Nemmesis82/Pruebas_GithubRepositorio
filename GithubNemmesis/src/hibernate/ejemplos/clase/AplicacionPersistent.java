@@ -20,7 +20,7 @@ public class AplicacionPersistent
 				//llamada al metodo de ventas despues del incremento del salario
 				isS.mostrarVentas();
 				
-				isS.mostrarRegiones();
+				//isS.mostrarRegiones();
 			}
 			
 			catch (Exception e) 
