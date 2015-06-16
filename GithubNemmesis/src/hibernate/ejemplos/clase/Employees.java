@@ -175,8 +175,7 @@ public class Employees implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "Los Empleados con el Id: " + employeeId + ", están en el departamento "
-				+ departments + ", su nombre es " + firstName + ", su apellido es "
+		return "Los Empleados con el Id: " + employeeId + ", su nombre es " + firstName + ", su apellido es "
 				+ lastName + " y el salario es " + salary;
 	}
 

@@ -38,14 +38,11 @@ public class IncrementoSalario
 			{
 			
 				employees=itEmplo.next();
-				//System.out.println("while employed");
 				//numero_salary= employees.getSalary().divide(incremento,RoundingMode.HALF_UP);
 				numero_salary= employees.getSalary().multiply(incremento);
 				//.divide
 				//multiply
-				
-				//System.out.println("while numero salary");
-				
+	
 				employees.setSalary(numero_salary);
 				//Salvo la sesion y actualizo
 				//session.saveOrUpdate(employees);
