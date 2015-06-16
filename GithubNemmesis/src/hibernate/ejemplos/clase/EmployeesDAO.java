@@ -1,6 +1,9 @@
 package hibernate.ejemplos.clase;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.text.html.ListView;
@@ -45,12 +48,37 @@ public class EmployeesDAO
 		
 		this.sesion = SesionManager.obtenerSesionNueva();
 		
-		listE3=sesion.createSQLQuery("SELECT * FROM EMPLOYEES WHERE DEPARTMENT_ID =(SELECT DEPARTMENT_ID FROM DEPARTMENTS WHERE DEPARTMENT_NAME").addEntity(Employees.class).list(); 
+		listE3=sesion.createSQLQuery("SELECT * FROM EMPLOYEES WHERE DEPARTMENT_ID =(SELECT DEPARTMENT_ID FROM DEPARTMENTS WHERE DEPARTMENT_NAME like 'Sales')").addEntity(Employees.class).list(); 
+		
+		Iterator<Employees> itEmplo = listE3.iterator();
+		
+		Employees employees =null;
+		
+		BigDecimal numero_salary = new BigDecimal("0");
+		
+		BigDecimal incremento = new BigDecimal("1.2");
+		
+
+		while(itEmplo.hasNext())
+		{
+		
+			employees=itEmplo.next();
+			//numero_salary= employees.getSalary().divide(incremento,RoundingMode.HALF_UP);
+			numero_salary= employees.getSalary().multiply(incremento);
+			//.divide
+			//multiply
+
+			employees.setSalary(numero_salary);
+			//Salvo la sesion y actualizo
+			//session.saveOrUpdate(employees);
+			System.out.println(employees);
+			
+		}
 		
 		SesionManager.cerrarSession(sesion);
 		
+		return iS=true;
 		
-		return iS;
 	}
 	
 	

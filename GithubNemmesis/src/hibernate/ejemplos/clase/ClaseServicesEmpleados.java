@@ -1,7 +1,5 @@
 package hibernate.ejemplos.clase;
 
-import java.math.BigDecimal;
-import java.util.Iterator;
 import java.util.List;
 
 public class ClaseServicesEmpleados 
@@ -14,16 +12,13 @@ public class ClaseServicesEmpleados
 	public ClaseServicesEmpleados()
 	{
 		empDAO= new EmployeesDAO();
-		
+
 	}
 
 	public boolean incrementarSalario ()
 	{
-		boolean incSal= false;
-		
-		empDAO.incrementarSalario();
-		
-		
+		boolean incSal= false;	
+		incSal=empDAO.incrementarSalario();
 		
 		return incSal;
 	}
@@ -42,6 +37,7 @@ public class ClaseServicesEmpleados
 	{
 		List<Employees> listE= null;
 		
+		/**/
 		return listE ;
 	}
 	
