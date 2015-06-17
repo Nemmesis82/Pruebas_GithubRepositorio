@@ -81,6 +81,36 @@ public class EmployeesDAO
 		
 	}
 	
+	public List<Employees> obtenerEmpleadosporDepartamento(Departments dep)
+	{
+		List<Departments> listE3 = null;
+		
+		List<Employees> listE4 = null;
+		
+		Employees e= null;
+		
+		Departments d=null;
+		
+		this.sesion = SesionManager.obtenerSesionNueva();
+		
+		listE3=sesion.createSQLQuery("SELECT * FROM DEPARTMENTS").addEntity(Departments.class).list(); 
+		
+		Iterator<Departments> itEMP = listE3.iterator();
+		
+		while (itEMP.hasNext()) 
+		{
+			d = itEMP.next();				
+		
+			//System.out.println("El nombre del Departamento es "+ d.getDepartmentName());
+			if(d.getDepartmentId() == dep.getDepartmentId())
+			listE4= new ArrayList<>(d.getEmployeeses());
+		}
+
+		
+		SesionManager.cerrarSession(sesion);
+		
+		return listE4;
+	}
 	
 
 }

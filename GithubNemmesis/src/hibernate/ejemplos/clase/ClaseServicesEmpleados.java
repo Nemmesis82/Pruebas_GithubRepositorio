@@ -4,10 +4,17 @@ import java.util.List;
 
 public class ClaseServicesEmpleados 
 {
+	/**
+	 * Creo un objeto de la clase employeesDAO 
+	 * para hacer las llamadas a la clase DAO
+	 */
 	
+
 	EmployeesDAO empDAO;
 	
-	
+	/**
+	 * Hago el constructor de la clase 	
+	 */
 	
 	public ClaseServicesEmpleados()
 	{
@@ -15,6 +22,13 @@ public class ClaseServicesEmpleados
 
 	}
 
+	/**
+	 * Metodo para hacer el incremento Salario
+	 * 
+	 * que devuelvo true o false dependiendo si esta correcto o no
+	 *  @return
+	 */
+	
 	public boolean incrementarSalario ()
 	{
 		boolean incSal= false;	
@@ -23,6 +37,10 @@ public class ClaseServicesEmpleados
 		return incSal;
 	}
 	
+	/**
+	 * Metodo para obtener el maximo salario de todos los departamentos
+	 * @return
+	 */
 	
 	public List<Employees> obtenerMaximoSalario()
 	{
@@ -33,12 +51,18 @@ public class ClaseServicesEmpleados
 		return listE ;	
 		}
 
+	/**
+	 * Metodo para obtener todos los empleados por el departamento indicado
+	 * @param dep
+	 * @return
+	 */
 	public List<Employees> obtenerEmpleadosporDepartamento(Departments dep)
 	{
-		List<Employees> listE= null;
+		List<Employees> listD= null;
 		
-		/**/
-		return listE ;
+		listD= empDAO.obtenerEmpleadosporDepartamento(dep);
+		
+		return listD ;
 	}
 	
 	public List<Employees> obtenerTodosEmpleados()
