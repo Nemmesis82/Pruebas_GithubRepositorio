@@ -1,6 +1,8 @@
 package hibernate.ejemplos.clase;
 import org.hibernate.Session;
+
 public class SuperClaseDAO
+
 {
 	
 	private  Session session;

@@ -2,7 +2,10 @@ package hibernate.ejemplos.clase;
 
 import java.util.List;
 
-public class Main {
+import pruebas.SessionManager;
+
+public class Main 
+{
 	public static void main(String[] args)
 	{
 		
@@ -83,22 +86,46 @@ public class Main {
 
 		System.out.println(iCs);
 		
+		/**
+		 * Creo un lista de empleado en la cual guardare el resultado 
+		 * llamada que hago al metodo Obtener empleados por departamento 
+		 */
+		List<Employees> listEmple = null;
 		
-		List<Employees> listDepart = null;
 		
+		/**
+		 * Creo una variable de Departamentos para pasarla como 
+		 * argumento al metodo obtener Empleados por departamento
+		 */
 		Departments de= new Departments((short) 80,"Sales");
 		
-		listDepart= cSE.obtenerEmpleadosporDepartamento(de);
+		/**
+		 * Aqui asigno a la lista listEmple el resultado de la 
+		 * llamada a obtener empleadoporDepartamento pasandole los datos 
+		 * de la variable de departamento a la cual quiero conocer sus empleados
+		 */
+		
+		listEmple= cSE.obtenerEmpleadosporDepartamento(de);
+		
+		
+		/**
+		 * Creo una variable para comprobar cuantos registros me muestra del
+		 * listado de empleados
+		 */
 		int i =0;
-		for (Employees employees : listDepart) 
+		
+		/**
+		 * Aqui muestro el resultado de la lista de empleaso para que se me 
+		 * imprima por pantalla 
+		 */
+		
+		for (Employees employees : listEmple) 
 		{
 			i++;
 			System.out.println(employees);
 			System.out.println(i);
 		}
 		
-		
-		
-		
+		SesionManager.cerrarSessionFactory();
 	}
 }

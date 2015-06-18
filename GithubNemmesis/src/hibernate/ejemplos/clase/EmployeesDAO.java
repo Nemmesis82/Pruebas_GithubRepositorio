@@ -14,6 +14,12 @@ public class EmployeesDAO
 {
 	Session sesion;
 	
+	/**
+	 * Metodo por el cual recupero todos 
+	 * los empleados de la base de datos
+	 * 
+	 */
+	
 	public List<Employees> recuperarEmpleadosBBDD()
 	{
 		List<Employees> listE = null;
@@ -26,7 +32,11 @@ public class EmployeesDAO
 		
 		return listE;
 	}
-
+/**
+ * Metodo por el cual obtengo el maximo salario  del empleado
+ * de cada departamento 
+ *
+ */
 	public List<Employees> obtenerMaximoSalario()
 	{
 		List<Employees> listE2 = null;
@@ -40,6 +50,11 @@ public class EmployeesDAO
 		return listE2;
 	}
 	
+	/**
+	 * Metodo por el cual hago el incremento de salario al departamento
+	 * de ventas
+	 * 
+	 */
 	public boolean incrementarSalario()
 	{
 		boolean iS= false;
@@ -80,7 +95,11 @@ public class EmployeesDAO
 		return iS=true;
 		
 	}
-	
+/**
+ * Metodo con el cual estoy obteniendo los empleados de un departamento
+ * cuando me pasan por el metodo el departamento que quiero 
+ * 
+ */
 	public List<Employees> obtenerEmpleadosporDepartamento(Departments dep)
 	{
 		List<Departments> listE3 = null;

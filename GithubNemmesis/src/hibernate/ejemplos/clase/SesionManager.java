@@ -5,7 +5,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-public class SesionManager {
+public class SesionManager 
+{
+/**
+ * Clase de conexion a la base de datos
+ */
 	
 	static {
 		
@@ -23,6 +27,10 @@ public class SesionManager {
 	public static SessionFactory getSessionFactory ()
 	{
 		return sesion_factory;
+	}
+	
+	public static void cerrarSessionFactory(){
+		sesion_factory.close();
 	}
 	
 	public static Session obtenerSesionNueva ()

@@ -13,7 +13,7 @@ public class ClaseServicesEmpleados
 	EmployeesDAO empDAO;
 	
 	/**
-	 * Hago el constructor de la clase 	
+	 * Hago el constructor de la Clase Services Empleados 	
 	 */
 	
 	public ClaseServicesEmpleados()
@@ -23,14 +23,18 @@ public class ClaseServicesEmpleados
 	}
 
 	/**
-	 * Metodo para hacer el incremento Salario
-	 * 
+	 * Llamada al metodo para hacer el incremento Salario
 	 * que devuelvo true o false dependiendo si esta correcto o no
 	 *  @return
 	 */
 	
 	public boolean incrementarSalario ()
 	{
+		
+		/**
+		 * Creo una variable boolean para que me devuelva el estado de 
+		 * 
+		 */
 		boolean incSal= false;	
 		incSal=empDAO.incrementarSalario();
 		
@@ -38,7 +42,7 @@ public class ClaseServicesEmpleados
 	}
 	
 	/**
-	 * Metodo para obtener el maximo salario de todos los departamentos
+	 * Llamada al metodo para obtener el maximo salario de todos los departamentos
 	 * @return
 	 */
 	
@@ -52,7 +56,7 @@ public class ClaseServicesEmpleados
 		}
 
 	/**
-	 * Metodo para obtener todos los empleados por el departamento indicado
+	 * Llamada metodo para obtener todos los empleados por el departamento indicado
 	 * @param dep
 	 * @return
 	 */
@@ -65,11 +69,31 @@ public class ClaseServicesEmpleados
 		return listD ;
 	}
 	
+	/**
+	 * Llamada al metodo para obtener  todos los empleados  de la bbdd
+	 * @return
+	 */
+	
 	public List<Employees> obtenerTodosEmpleados()
 	{
+		/**
+		 * Creo una lista donde voy a guardar los datos recuperados 
+		 * de los empleados
+		 */
+		
 		List<Employees> listEm= null;
 		
+		/**
+		 * Aqui es donde asigno el valor que me devuelve el metodo
+		 * a la lista de empleados 
+		 */
+		
 		listEm=empDAO.recuperarEmpleadosBBDD();
+		
+		/**
+		 * Devuelvo la variable listEm con el resultado de la consulta
+		 * de recuperarEmpleados
+		 */
 		
 		return listEm;
 	}
