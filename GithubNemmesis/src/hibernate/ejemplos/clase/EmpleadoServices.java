@@ -1,9 +1,9 @@
 package hibernate.ejemplos.clase;
 
+import java.sql.SQLException;
+import hibernate.ejemplos.clase.IRecuperable;
 
-import java.util.List;
-
-public class EmpleadoServices 
+public class EmpleadoServices implements IRecuperable
 {
 	//Atributo de la interfaz Recuperable
 	IRecuperable recup;

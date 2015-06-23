@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>RuthWebProyect</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description>Conexion a la BBDD</description>
+    <display-name>RuthWebProyect</display-name>
+    <servlet-name>RuthWebProyect</servlet-name>
+    <servlet-class>hibernate.ejemplos.clase.PedirEmpleado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RuthWebProyect</servlet-name>
+    <url-pattern>/PedirEmpleado</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Server segundo</description>
+    <display-name>ServSegundo</display-name>
+    <servlet-name>ServSegundo</servlet-name>
+    <servlet-class>hibernate.ejemplos.clase.ServSegundo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServSegundo</servlet-name>
+    <url-pattern>/ServSegundo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Forever Main</description>
+    <display-name>ForeverM</display-name>
+    <servlet-name>ForeverM</servlet-name>
+    <servlet-class>hibernate.ejemplos.clase.ForeverM</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForeverM</servlet-name>
+    <url-pattern>/ForeverM</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description>Conexion nueva con incustracion de DAO</description>
+    <display-name>NuevoPedirEmpleado</display-name>
+    <servlet-name>NuevoPedirEmpleado</servlet-name>
+    <servlet-class>hibernate.ejemplos.clase.NuevoPedirEmpleado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NuevoPedirEmpleado</servlet-name>
+    <url-pattern>/NuevoPedirEmpleado</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Conexion nueva con incustracion de DAO JDBC</description>
+    <display-name>NuevoPedirEmpleadoJDBC</display-name>
+    <servlet-name>NuevoPedirEmpleadoJDBC</servlet-name>
+    <servlet-class>hibernate.ejemplos.clase.NuevoPedirEmpleadoJDBC</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NuevoPedirEmpleadoJDBC</servlet-name>
+    <url-pattern>/NuevoPedirEmpleadoJDBC</url-pattern>
+  </servlet-mapping>
+<listener>
+	<listener-class>hibernate.ejemplos.clase.ServletContextListener_Prueba</listener-class>
+</listener>
+<listener>
+	<listener-class>hibernate.ejemplos.clase.ServletRequestListener_Prueba</listener-class>
+</listener>
+<listener>
+	<listener-class>hibernate.ejemplos.clase.HttpSessionListener_Prueba</listener-class>
+</listener>
+
+<filter>
+    <filter-name>Filtro</filter-name>
+    <filter-class>hibernate.ejemplos.clase.Filtro</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>Filtro</filter-name>
+    <url-pattern>/NuevoPedirEmpleado</url-pattern>
+</filter-mapping>
+<filter>
+    <filter-name>FiltroJDBC</filter-name>
+    <filter-class>hibernate.ejemplos.clase.FiltroJDBC</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>FiltroJDBC</filter-name>
+    <url-pattern>/NuevoPedirEmpleadoJDBC</url-pattern>
+</filter-mapping>
+<context-param>
+    <param-name>contador</param-name>
+    <param-value>0</param-value>
+</context-param>
+</web-app>
