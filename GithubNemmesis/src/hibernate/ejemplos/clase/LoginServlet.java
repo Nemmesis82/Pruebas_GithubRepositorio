@@ -21,26 +21,31 @@ import org.apache.logging.log4j.Logger;
 public class LoginServlet extends HttpServlet 
 {
 	private static final long serialVersionUID = 1L;
-	private final Logger log = LogManager.getRootLogger();
-
-	private ResultSet rset;       
-   
     public LoginServlet() {
        
     }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	//en la sesion guardamos el nombre
+    //s1.setAtributte ("usuario",usuario)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		//request.getSession();
+		//response.sendRedirect("login.html");	
+		
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
+		
+		final Logger log = LogManager.getRootLogger();
+
+		ResultSet rset;       
 		String user = request.getParameter("username");
 		String pass = request.getParameter("pass");
 	
-		String us = null;
+		String us1 = null;
+		String us2 = null;
 		Connection newconex =null;
 		PreparedStatement ps = null;
 		Savepoint sp = null;	
@@ -51,25 +56,33 @@ public class LoginServlet extends HttpServlet
 				sp= newconex.setSavepoint();
 				ps = newconex.prepareStatement(InstruccionesSQL.buscarUsuario());
 				ps.setString(1, user);
+				ps.setString(2, pass);
 				rset=ps.executeQuery();
+				PrintWriter pw=response.getWriter();
 				if (rset.next())
 													
 					{
-						us=rset.getString("USER_NAME");
-						us=rset.getString("USER_PASS");
+						us1=rset.getString("USER_NAME");
+						us2=rset.getString("USER_PASS");
+						//System.out.println(user + pass);
+						//System.out.println(us1 + us2);
+						pw.print("El usuario es correcto");
+						pw.print(" "+ user+ " "+ pass);
+						response.sendRedirect("menu.html");
+						request.getSession(true);
 						
-						System.out.println(us);
 					}
 					else
 					{
-						us="No existe el usuario";
-						System.out.println(us);
+						//System.out.println("No existe el usuario");
+						pw.print("No existe el usuario");
+						pw.print(user+ " "+ pass);
+						response.sendRedirect("login.html");
 					}
 				response.setContentType("text/html");
-				
-				PrintWriter pw=response.getWriter();
-				
-				pw.print(us);
+						
+				//pw.print(" "+ user + pass);
+				//pw.print(us1 + us2);
 			} 
 		catch (Exception e) 
 		{

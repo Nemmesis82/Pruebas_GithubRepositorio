@@ -9,11 +9,10 @@ import java.sql.Savepoint;
 public class LoginUsuario 
 {
 
-	private ResultSet rset;
-	
 	public Users obtenerUsuario(String USER_NAME, String USER_PASS) 
 			throws ClassNotFoundException, SQLException
 	{
+	    ResultSet rset;
 		Users u1 = null;
 		String us = null;
 		Connection newconex =null;
@@ -36,13 +35,13 @@ public class LoginUsuario
 					}
 					else
 					{
-						u1="No existe el usuario";
+						System.out.println("No existe el usuario");
 					}
 			
 			while (rset.next()) 
 			{
 				String USER_NAME1 = rset.getString(1);
-				u1. = rset.getString(2);
+				us = rset.getString(2);
 		}
 			newconex.commit();
 		} catch (Exception e) {
