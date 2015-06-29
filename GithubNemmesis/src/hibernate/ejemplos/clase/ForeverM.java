@@ -78,7 +78,7 @@ public class ForeverM extends HttpServlet
 		public void service(ServletRequest arg0, ServletResponse arg1) throws ServletException, IOException 
 		{
 		System.out.println("Ha llamado a service :-P");
-			super.service(arg0, arg1);
+			//super.service(arg0, arg1);
 		}
 
 	/**
