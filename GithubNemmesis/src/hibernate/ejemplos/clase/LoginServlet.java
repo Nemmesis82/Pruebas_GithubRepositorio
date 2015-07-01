@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Savepoint;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -76,8 +78,14 @@ public class LoginServlet extends HttpServlet
 					{
 						//System.out.println("No existe el usuario");
 						pw.print("No existe el usuario");
-						pw.print(user+ " "+ pass);
-						response.sendRedirect("login.html");
+						//pw.print(user+ " "+ pass);
+						//response.sendRedirect("login.html");
+						//response.sendRedirect("Error.html");
+						ServletContext context= getServletContext();
+						RequestDispatcher rd= context.getRequestDispatcher("/Error.html");
+						//pw.print("Esta en el else");
+						rd.include(request, response);
+						
 					}
 				response.setContentType("text/html");
 						

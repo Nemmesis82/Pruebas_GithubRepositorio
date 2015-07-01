@@ -11,64 +11,14 @@
     <welcome-file>login.html</welcome-file>
     <welcome-file>login.htm</welcome-file>
     <welcome-file>login.jsp</welcome-file>
- 	<welcome-file>ContarElemento.html</welcome-file>
+    <welcome-file>ContarElemento.html</welcome-file>
     <welcome-file>ContarElemento.htm</welcome-file>
     <welcome-file>ContarElemento.jsp</welcome-file>
     <welcome-file>menu.html</welcome-file>
     <welcome-file>menu.htm</welcome-file>
-    <welcome-file>menu.jsp</welcome-file> 
+    <welcome-file>menu.jsp</welcome-file>
   </welcome-file-list>
-  <!-- <servlet>
-    <description>Conexion a la BBDD</description>
-    <display-name>RuthWebProyect</display-name>
-    <servlet-name>RuthWebProyect</servlet-name>
-    <servlet-class>hibernate.ejemplos.clase.PedirEmpleado</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>RuthWebProyect</servlet-name>
-    <url-pattern>/PedirEmpleado</url-pattern>
-  </servlet-mapping>-->
- <!-- <servlet>
-    <description>Server segundo</description>
-    <display-name>ServSegundo</display-name>
-    <servlet-name>ServSegundo</servlet-name>
-    <servlet-class>hibernate.ejemplos.clase.ServSegundo</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServSegundo</servlet-name>
-    <url-pattern>/ServSegundo</url-pattern>
-  </servlet-mapping>
   <servlet>
-    <description>Forever Main</description>
-    <display-name>ForeverM</display-name>
-    <servlet-name>ForeverM</servlet-name>
-    <servlet-class>hibernate.ejemplos.clase.ForeverM</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ForeverM</servlet-name>
-    <url-pattern>/ForeverM</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description>Conexion nueva con incustracion de DAO</description>
-    <display-name>NuevoPedirEmpleado</display-name>
-    <servlet-name>NuevoPedirEmpleado</servlet-name>
-    <servlet-class>hibernate.ejemplos.clase.NuevoPedirEmpleado</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>NuevoPedirEmpleado</servlet-name>
-    <url-pattern>/NuevoPedirEmpleado</url-pattern>
-  </servlet-mapping>-->
- <!-- <servlet>
-    <description>Conexion nueva con incustracion de DAO JDBC</description>
-    <display-name>NuevoPedirEmpleadoJDBC</display-name>
-    <servlet-name>NuevoPedirEmpleadoJDBC</servlet-name>
-    <servlet-class>hibernate.ejemplos.clase.NuevoPedirEmpleadoJDBC</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>NuevoPedirEmpleadoJDBC</servlet-name>
-    <url-pattern>/NuevoPedirEmpleadoJDBC</url-pattern>
-  </servlet-mapping>
- <servlet>
     <description>Pedir Autenticacion</description>
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
@@ -77,28 +27,8 @@
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
-  </servlet-mapping> -->
-<!--   <servlet>
-    <description>Sesiones</description>
-    <display-name>ServletSesiones</display-name>
-    <servlet-name>ServletSesiones</servlet-name>
-    <servlet-class>hibernate.ejemplos.clase.ServletSesiones</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletSesiones</servlet-name>
-    <url-pattern>/ServletSesiones</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description>Redireccion de Servlet</description>
-    <display-name>ServletRedireccion</display-name>
-    <servlet-name>ServletRedireccion</servlet-name>
-    <servlet-class>hibernate.ejemplos.clase.ServletRedireccion</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletRedireccion</servlet-name>
-    <url-pattern>/ServletRedireccion</url-pattern>
-  </servlet-mapping> -->
-   <servlet> 
     <description>Para Medir Tiempo ISI</description>
     <display-name>MedirTime</display-name>
     <servlet-name>MedirTime</servlet-name>
@@ -109,42 +39,45 @@
     <url-pattern>/MedirTime</url-pattern>
   </servlet-mapping>
   <servlet>
-		<servlet-name>ContarElementosXMLServlet</servlet-name>
-		<servlet-class>hibernate.ejemplos.clase.ContarElementosXMLServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ContarElementosXMLServlet</servlet-name>
-		<url-pattern>/ContarElementosXMLServlet</url-pattern>
-	</servlet-mapping>
+    <servlet-name>ContarElementosXMLServlet</servlet-name>
+    <servlet-class>hibernate.ejemplos.clase.ContarElementosXMLServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContarElementosXMLServlet</servlet-name>
+    <url-pattern>/ContarElementosXMLServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LeerXML</servlet-name>
+    <servlet-class>hibernate.ejemplos.clase.LeerXML</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LeerXML</servlet-name>
+    <url-pattern>/LeerXML</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletCookie</servlet-name>
+    <servlet-class>hibernate.ejemplos.clase.ServletCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCookie</servlet-name>
+    <url-pattern>/ServletCookie</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>ServletError</servlet-name>
+    <servlet-class>hibernate.ejemplos.clase.ServletError</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletError</servlet-name>
+    <url-pattern>/ServletError</url-pattern>
+  </servlet-mapping>
   
-	<servlet>
-		<servlet-name>LeerXML</servlet-name>
-		<servlet-class>hibernate.ejemplos.clase.LeerXML</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>LeerXML</servlet-name>
-		<url-pattern>/LeerXML</url-pattern>
-	</servlet-mapping>
-	
-  <listener>
-    <listener-class>hibernate.ejemplos.clase.ServletContextListener_Prueba</listener-class>
-  </listener>
-  <listener>
-    <listener-class>hibernate.ejemplos.clase.ServletRequestListener_Prueba</listener-class>
-  </listener>
-  <listener>
-    <listener-class>hibernate.ejemplos.clase.HttpSessionListener_Prueba</listener-class>
-  </listener>
- <!--  <filter>
-    <filter-name>MedirTiempoIsi</filter-name>
-    <filter-class>hibernate.ejemplos.clase.MedirTiempoIsi</filter-class>
-  </filter> 
-  <filter-mapping>
-    <filter-name>MedirTiempoIsi</filter-name>
-    <url-pattern>/MedirTiempoIsi</url-pattern>
-  </filter-mapping> -->
- <!--  <context-param>
-    <param-name>contador</param-name>
-    <param-value>0</param-value>
-  </context-param> -->
+  <error-page>
+	<error-code>404</error-code> 
+	<location>/ServletError</location> 
+  </error-page> 
+  <error-page> 
+	<exception-type> javax.servlet.ServletException </exception-type > 
+	<location>/ServletError</location> 
+  </error-page>
+ 
 </web-app>

@@ -19,7 +19,7 @@ public class ContarElementosXMLServlet extends HttpServlet {
 			XMLService xmlService = new XMLService();
 			nElementos = xmlService.contarElementos(url);
 			System.out.println(url);
-			resp.getWriter().println("Hay " +nElementos+" Elementos");
+			//resp.getWriter().println("Hay " +nElementos+" Elementos");
 		}
 
 	}

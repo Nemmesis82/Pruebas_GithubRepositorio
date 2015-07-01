@@ -45,7 +45,7 @@ public class LeerXML extends HttpServlet{
 			}
 			resp.setContentType("text/html");
 			PrintWriter out = resp.getWriter();
-			out.println("<h1>el fichero XML tiene "+nelements+" elementos dentro</h1>");
+			//out.println("<h1>el fichero XML tiene "+nelements+" elementos dentro</h1>");
 		}
 		catch(Exception e){
 			
