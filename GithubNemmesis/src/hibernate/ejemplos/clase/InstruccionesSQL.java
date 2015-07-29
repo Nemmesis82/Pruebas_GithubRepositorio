@@ -17,4 +17,15 @@ public class InstruccionesSQL
 		return "SELECT * from users Where USER_NAME=? AND USER_PASS=?";
 		
 	}
+	public static String buscarDepartamento()
+	{		
+		return "select * from EMPLOYEES WHERE DEPARTMENT_ID=?";
+	}
+	
+	public static String Departamentos()
+	{		
+		return "select * from DEPARTMENTS";
+	}
+	
+	
 }

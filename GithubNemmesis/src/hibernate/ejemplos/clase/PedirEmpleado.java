@@ -26,6 +26,7 @@ public class PedirEmpleado extends HttpServlet {
     }
 
 
+	@SuppressWarnings("null")
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		String emp_id = request.getParameter("ID_Empleado");
@@ -49,12 +50,16 @@ public class PedirEmpleado extends HttpServlet {
 			
 			if (rs.next())
 			{
-				dat_Empl=rs.getString("First_name");
-				dat_Empl=rs.getString("Last_name");
+				
+					dat_Empl=rs.getString("First_name");
+					//dat_Empl=rs.getString("Last_name");
+			
 			}
+				
 			else
 			{
-				dat_Empl="No existe eemplleado con id";
+				dat_Empl="No existe empleado con id";
+
 			}
 		
 			response.setContentType("text/html");
@@ -62,6 +67,8 @@ public class PedirEmpleado extends HttpServlet {
 			PrintWriter pw=response.getWriter();
 			
 			pw.print(dat_Empl);
+			
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

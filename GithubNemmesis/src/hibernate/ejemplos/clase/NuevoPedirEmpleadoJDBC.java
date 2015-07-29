@@ -19,7 +19,7 @@ public class NuevoPedirEmpleadoJDBC extends HttpServlet
 		
 		private final Logger log = LogManager.getRootLogger();
 			
-		String emp_id;
+		String emp_id=null;
 		
 		String dat_Empl= null;
 		
@@ -42,7 +42,7 @@ public class NuevoPedirEmpleadoJDBC extends HttpServlet
 				int num = 0;
 				
 				String emp_id = request.getParameter("ID_Empleado");
-								
+					System.out.println(emp_id);			
 				num =Integer.parseInt(emp_id);
 				
 				try {
